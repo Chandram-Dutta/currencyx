@@ -1,5 +1,5 @@
 class ApiConstantsFake {
-  static String baseUrl =
-      'https://api.apilayer.com/exchangerates_data/convert?';
+  static String baseUrl = 'https://v6.exchangerate-api.com/v6/';
+  static String convertEndpoint = '/latest/USD';
   static String apiKey = 'YOUR-API-KEY-HERE';
 }

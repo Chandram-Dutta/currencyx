@@ -1,3 +1,4 @@
+import 'package:currencyx/application/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -6,6 +7,7 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ApiService apiService = ApiService();
     return Scaffold(
       appBar: AppBar(
         title: const Text("CurrencyX"),
@@ -32,7 +34,9 @@ class HomePage extends ConsumerWidget {
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        await apiService.getCurrency();
+                      },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                           Theme.of(context).colorScheme.onPrimary,
